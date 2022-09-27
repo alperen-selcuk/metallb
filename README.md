@@ -2,18 +2,19 @@
 
 öncelikle kube-proxy de stric arp true yapılır.
 
-"""kubectl edit configmap -n kube-system kube-proxy. """
+kubectl edit configmap -n kube-system kube-proxy. 
 
 komutu sonrası stricARP tru yapılır ve kaydedilir.
 
 ## install metallb
 
-kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.12.0/manifests/namespace.yaml 
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.12.0/manifests/namespace.yaml
+
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.12.0/manifests/metallb.yaml
 
-##metallb için config map
+## metallb için config map
 
-"""
+```
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -25,8 +26,11 @@ data:
     - name: default
       protocol: layer2
       addresses:
-      - <node pool ip>
-"""
+      - 172.30.2.200-172.30.2.250
+```
 
-deployment => kubectl create deployment web --image=nginx
-expose svc => kubectl expose deployment web --port 80 --type LoadBalancer
+## example
+
+```deployment => kubectl create deployment web --image=nginx```
+
+```expose svc => kubectl expose deployment web --port 80 --type LoadBalancer```
