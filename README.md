@@ -8,9 +8,11 @@ komutu sonrası stricARP tru yapılır ve kaydedilir.
 
 ## install metallb
 
+```
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.12.0/manifests/namespace.yaml
 
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.12.0/manifests/metallb.yaml
+```
 
 ## metallb için config map
 
