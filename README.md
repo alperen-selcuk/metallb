@@ -2,7 +2,7 @@
 
 öncelikle kube-proxy de stric arp true yapılır.
 
-kubectl edit configmap -n kube-system kube-proxy. 
+kubectl edit configmap -n kube-system kube-proxy
 
 komutu sonrası stricARP tru yapılır ve kaydedilir.
 
